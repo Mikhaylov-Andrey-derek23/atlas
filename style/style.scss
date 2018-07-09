@@ -1,8 +1,14 @@
 @font-face{
     font-family: "Icon";
     src: url('fonts/Pe-icon-7-stroke.woff')
-
 }
+@font-face{
+    font-family: "Awe";
+    src: url('fonts/fontawesome-webfont.woff')
+}
+$blue: #061a44;
+$green: #689f38;
+$grey: #f4f4f4;
 *{
     padding: 0;
     margin: 0;
@@ -34,7 +40,7 @@
 }
 .tech_info_box .info{
     line-height: 40px;
-    padding-left: 20%;
+    padding-left: 21%;
     color: #767676;
     font-size: 14px;
 }
@@ -47,7 +53,8 @@
     color: white;
     text-decoration: none;
     font-size: 14px;
-    padding-right: 5%;
+    padding-right: 1.5%;
+    margin-right: 2%;
     line-height: 40px;
     position: relative;
     &:after{
@@ -57,7 +64,339 @@
         position: absolute;
         color: white;
         top: 0;
-        right: 60px;
+        right: 1%;
         transition: 1s all;
+    }
+}
+.basis_general_link{
+    min-height: 65px;
+    background-color: $blue;
+    color: white; 
+    
+}
+.basis_general_link a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 13px;
+    margin: 12px 0;
+    font-size: 14px;
+    margin-right: 16px;
+    border-radius: 2px;
+    transition: 500ms all;
+    &:hover{
+        background-color: $green;
+    }
+  
+}
+
+.general_link{
+    margin: 0 3%;
+    display: flex;
+    justify-content: space-between;
+}
+.general_link_1{
+    display: flex;
+}
+.general_link_1 .catalog{
+    padding-left: 25px;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        padding: 8px;
+        background: url(img/qs.png) center center/contain no-repeat;
+        top: 15px;
+        left: 2px;
+    }
+}
+.general_link_1 .public_service{
+    background-color: $green;
+    padding: 15px 14px 15px 20px;
+}
+.general_link_1 .declaration{
+ border: 0.5px solid #515f7c;
+}
+.general_link_1 .shearch{
+    font-family: Icon;
+    font-weight: 600;
+    font-size: 20px;
+}
+.basis_nav_d{
+    
+    border-bottom: 1px solid #dedede;
+}
+.basis_nav_d .nav_d{
+    max-width: 1120px;
+    margin:  0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.basis_nav_d .nav_d a{
+    display: block;
+    margin: 32px 0;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+}
+.basis_nav_d .nav_d .logo{
+    padding: 25px;
+    background: url(img/logo.png) center center/contain no-repeat;
+    margin: 15px 0;
+    margin-right: 226px;
+}
+.basis_nav_d .nav_d .more{
+    line-height: 1px;
+    font-size: 31px;
+}
+.general_block{
+    max-width: 1120px;
+    margin:  90px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.general_block_basis_h1{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.167;
+    margin-bottom: 30px;
+}
+.general_block_basis_p{
+    font-size: 22px;
+}
+.general_block_link p {
+    display: block;
+    padding-right: 190px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+
+}
+.general_block_link a{
+    display: block;
+    margin-top: 30px;
+    padding-right: 190px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    position: relative;
+    &::before{
+        content: "\e684";
+        font-family: Icon;
+        font-size: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 25px;
+        
+    }
+}
+.news_block{
+    max-width: 1120px;
+    margin:  0 auto;
+    margin-bottom: 90px;
+}
+.news_block .general_news{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+.news_block .general_news .general_img{
+    margin-top: 13px;
+}
+.news_block .general_news img{
+    width: 735px;
+    height: 415px;
+}
+.news_block .general_news .general_description{
+    margin-left: 30px;
+    font-size: 14px;
+    color: rgb(112, 112, 112);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.news_block .general_news .general_description .artical{
+    font-size: 36px;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 178px;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.news_block .other_news{
+    display: flex;
+    justify-content: space-between;
+}
+.news_block .other_news .news{
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.news_block .other_news .news img{
+    width: 350px;
+    height: 200px;
+}
+.news_block .other_news .news .artical{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 30px 0;
+    &:hover{
+        text-decoration: underline;
+    }
+
+}
+.news_block .other_news .news p{
+    font-size: 14px;
+    color: rgb(112, 112, 112);
+}
+.s3{
+    background-color: $grey;
+    padding: 90px 0;
+}
+.servic{
+    margin: 0 auto;
+    max-width: 1120px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.servic .popular_servic{
+    width: 59%;
+}
+.servic .popular_servic h2{
+    margin-bottom: 30px;
+}
+.servic .popular_servic a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 45px 30px; 
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+        
+}
+.servic .popular_servic a .arrow{
+    font-family: Icon;
+    text-align: center;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    background: url(img/nt.png) center center/contain no-repeat;
+  
+}
+.servic .popular_servic a .gosuslugi .logo_gos{
+    width: 140px;
+    height: 22px;
+    background: url(img/gosservis.png) center center/contain no-repeat;
+}
+.servic .popular_servic a .gosuslugi p{
+    font-size: 14px;
+    color: #a8a8a8;
+}
+.servic .participate{
+    width: 38%;
+} 
+.servic .participate h2{
+    margin-bottom: 30px;
+}
+.servic .participate .first{
+    padding-top: 30px;
+}
+.servic .participate a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: $green;
+    padding: 15px 30px; 
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+        
+}
+.servic .participate .arrow{
+    font-family: Icon;
+}
+.servic .participate .button{
+    background-color: white;
+    color: $green;
+    text-align: center;
+    padding: 20px 101px;
+    border-radius: 5px;
+}
+.servic .participate .last{
+    padding-bottom: 30px;
+}
+footer{
+    background-color:$grey;
+    padding: 80px 0;
+}
+.table{
+    margin: 0 auto;
+    max-width: 1120px;
+    display: flex;
+    justify-content: space-between;
+}
+.table .tr{
+    width: 31%;
+}
+.table .tr .logo{
+    width: 60px;
+    height: 60px;
+    background: url(img/logo.png) center center/contain no-repeat;
+    margin-bottom: 20px;
+    
+}
+.table .tr h3{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.table .tr p{
+    font-size: 16px;
+}
+.table .tr a{
+    display: block;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.table .tr .snetwork{
+    margin-top: 30px;
+    margin-bottom: 140px;
+}
+.table .tr .snetwork a {
+    display: inline;
+    font-family: Awe;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.table .tr .copy{
+    color: rgba(0, 0, 0, 0.702);
+    font-size: 12px;
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        padding: 10px;
+        background: url(img/copy.png) center center/contain no-repeat;
+        top: 5px;
+        left: -26px;
     }
 }
