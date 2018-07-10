@@ -9,6 +9,11 @@
 $blue: #061a44;
 $green: #689f38;
 $grey: #f4f4f4;
+@mixin screen ($media) {
+   @if $media == medium {
+        @media (max-width: 900px) {@content};
+    } 
+}
 *{
     padding: 0;
     margin: 0;
@@ -18,6 +23,9 @@ $grey: #f4f4f4;
 .tech_info{
     background-color: black;
     color: white;
+    @include screen(medium){
+		display: none;
+	}
 }
 .tech_info_box{
     //min-height: 40px;
@@ -71,7 +79,10 @@ $grey: #f4f4f4;
 .basis_general_link{
     min-height: 65px;
     background-color: $blue;
-    color: white; 
+    color: white;
+    @include screen(medium){
+		display: none;
+	} 
     
 }
 .basis_general_link a{
@@ -125,6 +136,9 @@ $grey: #f4f4f4;
 .basis_nav_d{
     
     border-bottom: 1px solid #dedede;
+    @include screen(medium){
+		display: none;
+	}
 }
 .basis_nav_d .nav_d{
     max-width: 1120px;
@@ -151,11 +165,74 @@ $grey: #f4f4f4;
     line-height: 1px;
     font-size: 31px;
 }
+.m_menu{
+    display: none;
+    @include screen(medium){
+        display: block;
+        color: white;
+        width: 100%;
+        
+        position: fixed;
+        top: 0;
+        background-color: $green;
+	}
+}
+.tech_m_menu{
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.tech_m_menu .qs{
+    margin-right: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+    &:after{
+        content: "";
+        position: absolute;
+        padding: 8px;
+        background: url(img/qs.png) center center/contain no-repeat;
+        top: 3px;
+        left: 50px;
+    }
+
+
+}
+.m_block{
+    display: none;
+    @include screen(medium){
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding-top: 125px;
+        margin-bottom: 40px;
+    }
+	
+}
+.m_block .logo{
+    width: 60px;
+    height: 60px;
+    background: url(img/logo.png) center center/contain no-repeat;
+}
+.m_block .h1{
+    font-weight: 600;
+    font-size: 20px;
+    width: 75%;
+
+}
 .general_block{
     max-width: 1120px;
     margin:  90px auto;
     display: flex;
     justify-content: space-between;
+    @include screen(medium){
+		display: none;
+	}
 }
 .general_block_basis_h1{
     font-size: 30px;
@@ -199,11 +276,20 @@ $grey: #f4f4f4;
     max-width: 1120px;
     margin:  0 auto;
     margin-bottom: 90px;
+@include screen(medium){
+    width: 90%;
+    margin: 0 auto;
+
+}
 }
 .news_block .general_news{
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    @include screen(medium){
+        flex-direction: column;
+        
+	}
 
 }
 .news_block .general_news .general_img{
@@ -212,6 +298,12 @@ $grey: #f4f4f4;
 .news_block .general_news img{
     width: 735px;
     height: 415px;
+    @include screen(medium){
+        width: 100%;
+        height: 30%;
+        
+        
+	}
 }
 .news_block .general_news .general_description{
     margin-left: 30px;
@@ -220,6 +312,9 @@ $grey: #f4f4f4;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include screen(medium){
+		margin-left: 0;
+	}
 }
 .news_block .general_news .general_description .artical{
     font-size: 36px;
@@ -230,20 +325,34 @@ $grey: #f4f4f4;
     &:hover{
         text-decoration: underline;
     }
+    @include screen(medium){
+		margin-bottom: 20px;
+	}
 }
 .news_block .other_news{
     display: flex;
     justify-content: space-between;
+    @include screen(medium){
+        flex-direction: column;
+        margin-bottom: 40px;
+	}
 }
 .news_block .other_news .news{
     width: 32%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include screen(medium){
+        width: 100%;
+        margin: 0 auto;
+	}
 }
 .news_block .other_news .news img{
     width: 350px;
     height: 200px;
+    @include screen(medium){
+		display: none;
+	}
 }
 .news_block .other_news .news .artical{
     font-size: 20px;
@@ -263,16 +372,26 @@ $grey: #f4f4f4;
 .s3{
     background-color: $grey;
     padding: 90px 0;
+    @include screen(medium){
+		padding: 60px 0;
+	}
 }
 .servic{
     margin: 0 auto;
     max-width: 1120px;
     display: flex;
     justify-content: space-between;
+    @include screen(medium){
+        flex-direction: column;
+        width: 90%;
+	}
     
 }
 .servic .popular_servic{
     width: 59%;
+    @include screen(medium){
+		width: 100%;
+	}
 }
 .servic .popular_servic h2{
     margin-bottom: 30px;
@@ -310,6 +429,9 @@ $grey: #f4f4f4;
 }
 .servic .participate{
     width: 38%;
+    @include screen(medium){
+		width: 100%;
+	}
 } 
 .servic .participate h2{
     margin-bottom: 30px;
@@ -338,6 +460,9 @@ $grey: #f4f4f4;
     text-align: center;
     padding: 20px 101px;
     border-radius: 5px;
+    @include screen(medium){
+		padding: 20px 34%;
+	}
 }
 .servic .participate .last{
     padding-bottom: 30px;
@@ -345,21 +470,34 @@ $grey: #f4f4f4;
 footer{
     background-color:$grey;
     padding: 80px 0;
+    @include screen(medium){
+		padding: 20px 0;
+	}
 }
 .table{
     margin: 0 auto;
     max-width: 1120px;
     display: flex;
     justify-content: space-between;
+    @include screen(medium){
+        width: 90%;
+        flex-direction: column;
+	}
 }
 .table .tr{
     width: 31%;
+    @include screen(medium){
+		width: 100%;
+	}
 }
 .table .tr .logo{
     width: 60px;
     height: 60px;
     background: url(img/logo.png) center center/contain no-repeat;
     margin-bottom: 20px;
+    @include screen(medium){
+		display: none;
+	}
     
 }
 .table .tr h3{
@@ -369,6 +507,22 @@ footer{
 }
 .table .tr p{
     font-size: 16px;
+    @include screen(medium){
+		margin-bottom: 10px;
+	}
+}
+.table .tr .mobil_adress{
+    display: none;
+    @include screen(medium){
+        display: inline-block;
+        margin-bottom: 30px;
+	}
+}
+.table .tr .dec_adress{
+    
+    @include screen(medium){
+        display: none;
+	}
 }
 .table .tr a{
     display: block;
@@ -376,10 +530,27 @@ footer{
     color: black;
     text-decoration: none;
     margin-bottom: 20px;
+    @include screen(medium){
+		font-weight: 600;
+	}
+}
+.table .tr .d_link{
+    @include screen(medium){
+		display: none;
+	}
+}
+.table .tr .m_link{
+    display: none;
+    @include screen(medium){
+		display: block;
+	}
 }
 .table .tr .snetwork{
     margin-top: 30px;
     margin-bottom: 140px;
+    @include screen(medium){
+		margin-bottom: 30px;
+	}
 }
 .table .tr .snetwork a {
     display: inline;
@@ -399,4 +570,7 @@ footer{
         top: 5px;
         left: -26px;
     }
+    @include screen(medium){
+		margin-left: 20px;
+	}
 }
